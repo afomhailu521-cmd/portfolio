@@ -1,8 +1,5 @@
 
-/* =========================
-   1. Global styles
-========================= */
-
+/* 1. Global styles */
 * {
     box-sizing: border-box;
 }
@@ -17,15 +14,16 @@ body {
     font-size: 16px;
     line-height: 1.7;
     color: #334155;
-    background-color: #f8fafc;
+    background: #f8fafc;
 }
 
-/* =========================
-   2. Navigation
-========================= */
+a {
+    transition: 0.2s ease;
+}
 
+/* 2. Navigation */
 header {
-    background-color: #172554;
+    background: #172554;
     padding: 18px 7%;
 }
 
@@ -38,8 +36,8 @@ nav {
 }
 
 nav > a {
-    color: #ffffff;
-    font-size: 24px;
+    color: #fff;
+    font-size: 25px;
     font-weight: bold;
     text-decoration: none;
 }
@@ -48,66 +46,62 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     gap: 24px;
-    list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 nav ul a {
-    color: #ffffff;
+    color: #e2e8f0;
     text-decoration: none;
-    transition: color 0.2s ease;
 }
 
 nav ul a:hover {
     color: #93c5fd;
 }
 
-/* =========================
-   3. Main content
-========================= */
-
+/* 3. Main layout */
 main {
     width: 100%;
     max-width: 1100px;
-    margin: 0 auto;
+    margin: auto;
     padding: 24px;
 }
 
 section {
-    padding: 40px 0;
+    padding: 45px 0;
     scroll-margin-top: 20px;
 }
 
 #home {
-    padding: 80px 0;
+    padding: 90px 0;
+}
+
+h1, h3 {
+    color: #172554;
 }
 
 h1 {
     margin: 0 0 16px;
-    color: #172554;
     font-size: clamp(2.2rem, 5vw, 3.5rem);
     line-height: 1.2;
 }
 
 h2 {
     margin-bottom: 18px;
-    color: #1d4ed8;
+    color: #2563eb;
     font-size: 28px;
 }
 
 h3 {
-    color: #172554;
+    margin-top: 0;
 }
 
 p {
     max-width: 750px;
 }
 
-/* =========================
-   4. Home section link
-========================= */
-
+/* 4. Home section */
 #home h2 {
     color: #475569;
     font-size: 23px;
@@ -116,29 +110,25 @@ p {
 #home > a {
     display: inline-block;
     margin-top: 16px;
-    padding: 12px 22px;
-    border-radius: 6px;
-    background-color: #2563eb;
-    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #fff;
     font-weight: bold;
     text-decoration: none;
-    transition: background-color 0.2s ease;
 }
 
 #home > a:hover {
-    background-color: #1d4ed8;
+    background: #1d4ed8;
+    transform: translateY(-2px);
 }
 
-/* Visible keyboard focus */
 a:focus-visible {
     outline: 3px solid #60a5fa;
     outline-offset: 4px;
 }
 
-/* =========================
-   5. Skills section
-========================= */
-
+/* 5. Skills */
 #skills ul {
     padding-left: 24px;
 }
@@ -147,26 +137,22 @@ a:focus-visible {
     margin-bottom: 10px;
 }
 
-/* =========================
-   6. Projects section
-========================= */
-
+/* 6. Projects */
 article {
-    padding: 24px;
+    padding: 26px;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 14px rgba(23, 37, 84, 0.06);
+    background: #fff;
+    box-shadow: 0 5px 18px rgba(23, 37, 84, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-article h3 {
-    margin-top: 0;
+article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(23, 37, 84, 0.1);
 }
 
-/* =========================
-   7. Contact section
-========================= */
-
+/* 7. Contact */
 #contact {
     padding-bottom: 60px;
 }
@@ -180,27 +166,19 @@ article h3 {
     color: #1e40af;
 }
 
-/* =========================
-   8. Footer
-   Works when you add a footer
-   element to your HTML
-========================= */
-
+/* 8. Footer */
 footer {
-    padding: 20px;
-    background-color: #172554;
-    color: #ffffff;
+    padding: 22px;
+    background: #172554;
+    color: #fff;
     text-align: center;
 }
 
 footer p {
-    margin: 0 auto;
+    margin: auto;
 }
 
-/* =========================
-   9. Responsive layout
-========================= */
-
+/* 9. Responsive design */
 @media (max-width: 600px) {
     header {
         padding: 18px 5%;
@@ -220,14 +198,14 @@ footer p {
     }
 
     #home {
-        padding: 50px 0;
+        padding: 55px 0;
     }
 
     section {
-        padding: 28px 0;
+        padding: 30px 0;
     }
 
     article {
-        padding: 18px;
+        padding: 20px;
     }
 }
