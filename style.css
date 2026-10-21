@@ -18,12 +18,12 @@ body {
 }
 
 a {
-    transition: 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
 /* 2. Navigation */
 header {
-    background: #172554;
+    background: #0f172a;
     padding: 18px 7%;
 }
 
@@ -57,7 +57,7 @@ nav ul a {
 }
 
 nav ul a:hover {
-    color: #93c5fd;
+    color: #60a5fa;
 }
 
 /* 3. Main layout */
@@ -73,12 +73,9 @@ section {
     scroll-margin-top: 20px;
 }
 
-#home {
-    padding: 90px 0;
-}
-
-h1, h3 {
-    color: #172554;
+h1,
+h3 {
+    color: #0f172a;
 }
 
 h1 {
@@ -102,6 +99,10 @@ p {
 }
 
 /* 4. Home section */
+#home {
+    padding: 90px 0;
+}
+
 #home h2 {
     color: #475569;
     font-size: 23px;
@@ -116,19 +117,22 @@ p {
     color: #fff;
     font-weight: bold;
     text-decoration: none;
+    transition: background-color 0.2s ease,
+                transform 0.2s ease;
 }
 
 #home > a:hover {
     background: #1d4ed8;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 }
 
+/* 5. Keyboard accessibility */
 a:focus-visible {
     outline: 3px solid #60a5fa;
     outline-offset: 4px;
 }
 
-/* 5. Skills */
+/* 6. Skills */
 #skills ul {
     padding-left: 24px;
 }
@@ -137,22 +141,23 @@ a:focus-visible {
     margin-bottom: 10px;
 }
 
-/* 6. Projects */
+/* 7. Projects */
 article {
     padding: 26px;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #dbeafe;
     border-radius: 12px;
     background: #fff;
     box-shadow: 0 5px 18px rgba(23, 37, 84, 0.06);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
 }
 
 article:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(23, 37, 84, 0.1);
+    border-color: #93c5fd;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.1);
 }
 
-/* 7. Contact */
+/* 8. Contact */
 #contact {
     padding-bottom: 60px;
 }
@@ -166,10 +171,10 @@ article:hover {
     color: #1e40af;
 }
 
-/* 8. Footer */
+/* 9. Footer */
 footer {
     padding: 22px;
-    background: #172554;
+    background: #0f172a;
     color: #fff;
     text-align: center;
 }
@@ -178,7 +183,7 @@ footer p {
     margin: auto;
 }
 
-/* 9. Responsive design */
+/* 10. Responsive design */
 @media (max-width: 600px) {
     header {
         padding: 18px 5%;
@@ -207,5 +212,15 @@ footer p {
 
     article {
         padding: 20px;
+    }
+}
+
+/* 11. Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto;
+        transition: none;
     }
 }
