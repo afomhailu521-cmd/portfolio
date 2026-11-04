@@ -450,14 +450,70 @@ footer p {
         padding: 2.2rem;
     }
 }
+/* 15. Reduced motion */
 
-/* 15. Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+    * {
+        scroll-behavior: auto;
+        transition: none;
     }
 }
+
+/* 16. Mobile Menu */
+
+#menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+/* 17. Back to Top */
+
+#backtotop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 12px 17px;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+/* 18. Mobile Navigation */
+
+@media (max-width: 650px) {
+
+    header {
+        position: fixed;
+        flex-direction: row;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--surface);
+        padding: 20px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+}
+
+
